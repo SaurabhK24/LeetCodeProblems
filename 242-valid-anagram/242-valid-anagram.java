@@ -14,16 +14,13 @@ class Solution {
             
         }
         
-        for (int i = 0; i < countofchar.length; i++) {
-           System.out.println();
-            if (countofchar[i] == 0){
-                continue;
-            } else {
-               return false;
-        }
-       
-        }  
-       
+        for (int count : countofchar){
+          
+          if (count != 0){
+             return false;
+          }
+          
+       }
         
         return true;
         
