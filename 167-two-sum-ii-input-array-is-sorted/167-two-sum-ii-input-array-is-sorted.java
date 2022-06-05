@@ -3,13 +3,21 @@ class Solution {
         
         
         
-        int start = 0, end = numbers.length - 1;
-        while(start < end){
-            if(numbers[start] + numbers[end] == target) break;
-            if(numbers[start] + numbers[end] < target) start++;
-            else end--;
+        int a = 0;
+        int b = numbers.length - 1;
+       
+        while(a < b){
+            if(numbers[a] + numbers[b] == target){
+                break;
+            } 
+            if(numbers[a] + numbers[b] < target) {
+                a++;
+            } else {
+                b--;
+            }
+                
         }
-        return new int[]{start + 1, end + 1};
+        return new int[]{a + 1, b + 1};
     }
         
 
