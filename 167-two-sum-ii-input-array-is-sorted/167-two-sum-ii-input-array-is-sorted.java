@@ -3,22 +3,14 @@ class Solution {
         
         
         
-        HashMap<Integer, Integer> myMap = new HashMap<>();
-        
-        for (int i = 0; i < numbers.length; i++){
-            myMap.put(numbers[i],i); 
+        int start = 0, end = numbers.length - 1;
+        while(start < end){
+            if(numbers[start] + numbers[end] == target) break;
+            if(numbers[start] + numbers[end] < target) start++;
+            else end--;
         }
-        
-        for (int j = 0; j < numbers.length; j++){
-            int complement = target - numbers[j];
-            if (myMap.containsKey(complement) && myMap.get(complement) != j){
-                int[] arr = {j + 1,myMap.get(complement) + 1};
-                return arr;
-            }
-            
-        }
-        
-        return null;
-        
+        return new int[]{start + 1, end + 1};
     }
+        
+
 }
