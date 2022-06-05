@@ -3,16 +3,9 @@ class Solution {
         
         // "race a car"
         
-        String myString = "";
+       String myString = s.toLowerCase();
+       myString = myString.replaceAll("[^A-Za-z0-9]", "");
         
-        
-        for (Character c : s.toCharArray()){
-            if (Character.isLetter(c) || Character.isDigit(c)){
-                myString = myString + c;
-            }
-        }
-        
-        myString = myString.toLowerCase();
         
         int a = 0; 
         int b = myString.length() - 1;
