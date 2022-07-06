@@ -1,5 +1,5 @@
 class Solution {
-    public boolean isValid(String s) {
+     public static boolean isValid(String s) {
         
         if (s.length() % 2 != 0){
             return false;
@@ -8,15 +8,24 @@ class Solution {
         Stack<Character> myStack = new Stack<>();
         
         for (char current : s.toCharArray()){
-            if (current == '}' && !myStack.isEmpty() && myStack.peek() == '{'){
+            if (current == '(' || current == '{' || current == '['){
+                myStack.push(current);
+                
+            } else if (current == '}' && !myStack.isEmpty() && myStack.peek() == '{'){
                 myStack.pop();
+                
+            }else if (current == ']' && !myStack.isEmpty() && myStack.peek() == '['){
+                myStack.pop();
+                
             } else if (current == ')' && !myStack.isEmpty() && myStack.peek() == '('){
                 myStack.pop();
-            } else if (current == ']' && !myStack.isEmpty() && myStack.peek() == '['){
-                myStack.pop();
+            
             } else {
-                myStack.push(current);
+               
+               return false;
+               
             }
+
 
         }
          return myStack.isEmpty();
