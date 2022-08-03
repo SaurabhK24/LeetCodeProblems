@@ -36,13 +36,11 @@ public class Solution {
         ListNode start = head;
         ListNode check = findCycle(head);
         
-        
-        
         if (check == null){
             return null;
         }
         
-        while(check != start){
+        while(check != start){ 
             check = check.next;
             start = start.next;
                 
