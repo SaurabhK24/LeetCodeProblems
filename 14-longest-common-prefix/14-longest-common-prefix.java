@@ -1,13 +1,7 @@
 class Solution {
     public String longestCommonPrefix(String[] strs) {
        
-        int shortestLength = Integer.MAX_VALUE;
-        
-        for (String current : strs){
-            if (current.length() < shortestLength){
-                shortestLength = current.length();
-            }
-        }
+      
         
         Arrays.sort(strs);
         char[] first = strs[0].toCharArray();
@@ -16,7 +10,7 @@ class Solution {
         
 
         String prefix = "";
-        for (int i = 0; i < shortestLength; i++){
+        for (int i = 0; i < first.length; i++){
             
             if (first[i] != second[i]){
                 break;
