@@ -1,19 +1,23 @@
 class Solution {
-     public int[] plusOne(int[] digits) {
-       
+    public int[] plusOne(int[] digits) {
         
         for (int i = digits.length - 1; i >= 0; i--){
-                if (digits[i] < 9){
-                    digits[i] = digits[i] + 1;
-                    return digits;
-                }
+            if (digits[i] < 9){
+                digits[i] = digits[i] + 1;
+                break;
+            }
             digits[i] = 0;
-            
         }
         
-        int[] returnArr = new int[digits.length + 1];
-         returnArr[0] = 1;
-         
-        return returnArr;
-     }
+        
+        int[] arr = new int[digits.length + 1];
+        arr[0] = 1;
+        
+        if(digits[0] == 0){
+            return arr;
+        }
+        
+        return digits;
+        
+    }
 }
